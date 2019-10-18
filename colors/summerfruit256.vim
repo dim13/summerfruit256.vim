@@ -13,13 +13,9 @@
 " The original "summerfruit" color scheme and "desert256" are available from vim.org.
 
 set background=light
-if version > 580
-    " no guarantees for version 5.8 and below, but this makes it stop
-    " complaining
-    hi clear
-    if exists("syntax_on")
-        syntax reset
-    endif
+hi clear
+if exists("syntax_on")
+    syntax reset
 endif
 let g:colors_name="summerfruit256"
 
@@ -254,7 +250,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X("MatchParen", "", "", "")
 
     " Specials
-    call <SID>X("Todo", "e50808", "dbf3cd", "bold")
+    call <SID>X("Todo", "e50808", "dbf3cd", "")
     call <SID>X("Title", "000000", "", "")
     call <SID>X("Special", "fd8900", "", "")
 
@@ -265,45 +261,11 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X("Statement", "fb660a", "", "")
     call <SID>X("Function", "ff0086", "", "")
     call <SID>X("PreProc", "ff0007", "", "")
-    call <SID>X("Comment", "22a21f", "", "bold")
+    call <SID>X("Comment", "22a21f", "", "italic")
     call <SID>X("Type", "70796b", "", "")
     call <SID>X("Error", "ffffff", "d40000", "")
     call <SID>X("Identifier", "ff0086", "", "")
     call <SID>X("Label", "ff0086", "", "")
-
-    " Python Highlighting
-    call <SID>X("pythonCoding", "ff0086", "", "")
-    call <SID>X("pythonRun", "ff0086", "", "")
-    call <SID>X("pythonBuiltinObj", "2b6ba2", "", "")
-    call <SID>X("pythonBuiltinFunc", "2b6ba2", "", "")
-    call <SID>X("pythonException", "ee0000", "", "")
-    call <SID>X("pythonExClass", "66cd66", "", "")
-    call <SID>X("pythonSpaceError", "", "", "")
-    call <SID>X("pythonDocTest", "2f5f49", "", "")
-    call <SID>X("pythonDocTest2", "3b916a", "", "")
-    call <SID>X("pythonFunction", "ee0000", "", "")
-    call <SID>X("pythonClass", "ff0086", "", "")
-
-    " HTML Highlighting
-    call <SID>X("htmlTag", "00bdec", "", "")
-    call <SID>X("htmlEndTag", "00bdec", "", "")
-    call <SID>X("htmlSpecialTagName", "4aa04a", "", "")
-    call <SID>X("htmlTagName", "4aa04a", "", "")
-    call <SID>X("htmlTagN", "4aa04a", "", "")
-
-    " Jinja Highlighting
-    call <SID>X("jinjaTagBlock", "ff0007", "fbf4c7", "bold")
-    call <SID>X("jinjaVarBlock", "ff0007", "fbf4c7", "")
-    call <SID>X("jinjaString", "0086d2", "fbf4c7", "")
-    call <SID>X("jinjaNumber", "bf0945", "fbf4c7", "bold")
-    call <SID>X("jinjaStatement", "fb660a", "fbf4c7", "bold")
-    call <SID>X("jinjaComment", "008800", "002300", "italic")
-    call <SID>X("jinjaFilter", "ff0086", "fbf4c7", "")
-    call <SID>X("jinjaRaw", "aaaaaa", "fbf4c7", "")
-    call <SID>X("jinjaOperator", "ffffff", "fbf4c7", "")
-    call <SID>X("jinjaVariable", "92cd35", "fbf4c7", "")
-    call <SID>X("jinjaAttribute", "dd7700", "fbf4c7", "")
-    call <SID>X("jinjaSpecial", "008ffd", "fbf4c7", "")
 
     " delete functions {{{
     delf <SID>X
@@ -319,4 +281,3 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 endif
 
 " vim: set fdl=0 fdm=marker:
-
